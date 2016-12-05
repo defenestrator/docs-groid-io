@@ -3,5 +3,5 @@ layout: default
 title: Markup
 ---
 # {{page.title}}
-- https://github.com/airbnb/css
-- https://google.github.io/styleguide/htmlcssguide.xml#HTML_Style_Rules
+- [CSS](https://github.com/airbnb/css)
+- [HTML](https://google.github.io/styleguide/htmlcssguide.xml#HTML_Style_Rules)

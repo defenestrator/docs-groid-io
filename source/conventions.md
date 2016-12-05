@@ -8,28 +8,13 @@ title: Conventions
 
 This guide exists to provide a marginally sane set of defaults for building software applications.
 
-### Client conventions override these defaults.
-
-We are a client services company, and therefore our clients are the primary focus. We usually adopt their coding 
-standards.
-
-**The conventions specified within a project are the ultimate authority.** 
-
-The conventions presented on this site are guidance, not laws.
-
-For example, these general conventions indicate that we default to Unix Newline characters, but a client 
-project built on Microsoft .NET would most likely use Windows Newline standards. 
-There are times we need to integrate with Version Control Systems other than Git, and these decisions are negotiated 
-by the Groid Project Management Team on a case by case basis. 
-
-When in doubt, ask someone familiar with the project on which you are working.
-
 ### The Basics
 
-- We PREFER UTF-8 Character Encoding for source code files.
-- We PREFER Unix Newlines
-- We PREFER Git
-- We PREFER Soft Tabs
+- We use Git, there will be no push-to-master deployments on the groid-io repository.
+  - Administrators may push to Master for this documentation site, but all others must submit a Pull Request.
+- Contributions MUST use UTF-8 Character Encoding for source code files.
+- Contributions MUST use Unix Newlines
+- Contributions MUST use Soft Tabs
 
 ### Coding Style Ethics
 - We are all mere humans, and we will have to maintain your code someday. Be nice to your fellow developers.

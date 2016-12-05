@@ -8,7 +8,7 @@ This site is built using [Sculpin](http://sculpin.io) via Composer.
 
 It is tested using [Behat](http://behat.org/en/latest/).
 
-To install it and start contributing `git clone https://github.com/Groid15/development-standards.git` 
+To install it and start contributing `git clone https://github.com/defenestrator/docs-groid-io.git` 
 then run `composer install`
 
 Run `sculpin generate` to generate output, and serve the site from `docs` to check what it builds
@@ -27,7 +27,7 @@ Sculpin currently uses [michelf/php-markdown](https://packagist.org/packages/mic
 specific Markdown guidelines.
 
 ### Your pull request should adhere to the following:
-- Remember to run `sculpin generate` to *build the production site, before issuing a pull request.*
+- Remember to run `sculpin generate` to *build the site, before issuing a pull request.*
 - Please make a a separate pull request for individual commit.
 - Enter a meaningful pull request title.
 - Please keep descriptions short, simple and clear.

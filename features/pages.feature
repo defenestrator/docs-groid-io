@@ -28,14 +28,6 @@ Scenario: Javascript page loads
   Then the url should match "/javascript-guide"
   And I should see "Javascript"
 
-
-Scenario: Ruby page loads
-  Given I am on "/"
-  When I click on "Ruby"
-  Then the url should match "/ruby-guide"
-  And I should see "Ruby"
-
-
 Scenario: Markup page loads
   Given I am on "/"
   When I click on "Markup"
