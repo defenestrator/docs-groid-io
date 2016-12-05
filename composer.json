@@ -1,0 +1,29 @@
+{
+  "name": "defenestrator/docs-groid-io",
+  "description": "Documentation for groid.io",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jeremy Anderson",
+      "email": "jeremy@groid.io",
+      "homepage": "http://docs.groid.io"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "components/bootstrap": "~2.3.1",
+    "components/jquery": "~1.9.1",
+    "components/highlightjs": "~7.3.0",
+    "sculpin/sculpin": "^2.0"
+  },
+  "require-dev": {
+    "behat/behat": "@dev",
+    "behat/mink-extension": "^2.2",
+    "behat/mink-goutte-driver": "^1.2",
+    "behat/mink-selenium2-driver": "^1.3"
+  },
+  "config": {
+    "component-dir": "source/components"
+  }
+}

@@ -1,0 +1,6 @@
+sculpin_content_types:
+    posts:
+        permalink: blog/:year/:month/:day/:filename/
+sculpin:
+    permalink: pretty
+    output_dir: docs

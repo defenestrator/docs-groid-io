@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title><![CDATA[Coding Standards]]></title>
+    <link href="/atom.xml" rel="self"/>
+    <link href="/"/>
+    <updated>2016-12-05T14:40:45+00:00</updated>
+    <id>/</id>
+        <generator uri="http://sculpin.io/">Sculpin</generator>
+            <entry>
+            <title type="html"><![CDATA[Syntax Highlighting]]></title>
+            <link href="/blog/2013/02/04/highlight"/>
+            <updated>2013-02-04T00:00:00+00:00</updated>
+            <id>/blog/2013/02/04/highlight</id>
+            <content type="html"><![CDATA[<p>You're all programmers, right? Yeah. So you want some highlighting with your static site generation?
+Here you go!</p>
+
+<pre><code class="php">namespace Foo;
+
+/**
+ * Awesome Contrived Example.
+ */
+class Bar implements BarInterface
+{
+    private $baz;
+
+    public function __construct(BazInterface $baz)
+    {
+        $this-&gt;baz = $baz;
+    }
+
+    public function doIt()
+    {
+        return $this-&gt;baz-&gt;do('it');
+    }
+}
+</code></pre>
+
+<p>When writing new content for this site you can use <a href="http://michelf.ca/projects/php-markdown/extra/#fenced-code-blocks">fenced code blocks</a> with a syntax declaration at the top.</p>
+
+<p>You can use either <code>~</code> or <code>`</code> to mark them.</p>
+]]></content>
+        </entry>
+    </feed>

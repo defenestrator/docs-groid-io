@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript &mdash; Coding Standards &mdash; To Get You Started</title>
+        <meta charset="utf-8">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <meta name="robots" content="noindex, follow">
+                <link href="/components/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/components/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link href="/css/style.css" rel="stylesheet" type="text/css" />
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 500" rel="stylesheet">
+        <link rel="apple-touch-startup-image" href="/images/jackson/2048x2048.png">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="shortcut icon" sizes="76x76" href="/images/jackson/76x76.png">
+        <link rel="shortcut icon" sizes="120x120" href="/images/jackson/120x120.png">
+        <link rel="shortcut icon" sizes="128x128" href="/images/jackson/128x128.png">
+        <link rel="shortcut icon" sizes="152x152" href="/images/jackson/152x152.png">
+        <link rel="shortcut icon" sizes="196x196" href="/images/jackson/196x196.png">
+        <link rel="shortcut icon" sizes="512x512" href="/images/jackson/512x512.png">
+        <link rel="shortcut icon" sizes="1024x1024" href="/images/jackson/1024x1024.png">
+        <link rel="shortcut icon" sizes="2048x2048" href="/images/jackson/2048x2048.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/images/jackson/76x76.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/images/jackson/120x120.png">
+        <link rel="apple-touch-icon" sizes="128x128" href="/images/jackson/128x128.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/images/jackson/152x152.png">
+        <link rel="apple-touch-icon" sizes="196x196" href="/images/jackson/196x196.png">
+        <link rel="apple-touch-icon" sizes="512x512" href="/images/jackson/512x512.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="/images/jackson/1024x1024.png">
+        <link rel="apple-touch-icon" sizes="2048x2048" href="/images/jackson/2048x2048.png">
+
+        <link rel="stylesheet" href="/components/highlightjs/styles/github.css" />
+        <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Coding Standards activity feed" />
+        <style>
+        /** quick fix because bootstrap <pre> has a background-color. */
+        pre code { background-color: inherit; }
+        </style>
+                                    </head>
+    <body>
+        <header>
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="/"><img src="/images/groid-hydro.png" alt="Groid" title="Groid Logo"></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav">
+                                <li><a href="/conventions">Conventions</a></li>
+                                <li><a href="/php-guide">PHP</a></li>
+                                <li><a href="/javascript-guide">Javascript</a></li>
+                                <li><a href="/ruby-guide">Ruby</a></li>
+                                <li><a href="/markup-guide">Markup</a></li>
+                                <li><a href="/testing">Testing</a></li>
+                                <li><a href="/working-agreement">Team</a></li>
+                                <li><a href="/compliance">Compliance</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="mainContent container">
+            <div class="row-fluid">
+                <div class="span8">
+                    <h1 id="%7B%7Bpage.title%7D%7D">Javascript</h1>
+
+<h2 id="all-code-in-any-code-base-should-look-like-a-single-person-typed-it%2C-no-matter-how-many-people-contributed.">All code in any code-base should look like a single person typed it, no matter how many people contributed.</h2>
+
+<blockquote>
+  <h4 id="%22arguments-over-style-are-pointless.-there-should-be-a-style-guide%2C-and-you-should-follow-it%22">"Arguments over style are pointless. There should be a style guide, and you should follow it"</h4>
+  
+  <p><em>- Rebecca</em> <em>Murphey</em></p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <h4 id="%22part-of-being-a-good-steward-to-a-successful-project-is-realizing-that-writing-code-for-yourself-is-a-bad-idea%E2%84%A2.-if-thousands-of-people-are-using-your-code%2C-then-write-your-code-for-maximum-clarity%2C-not-your-personal-preference-of-how-to-get-clever-within-the-spec.%22">"Part of being a good steward to a successful project is realizing that writing code for yourself is a Bad Idea™. If thousands of people are using your code, then write your code for maximum clarity, not your personal preference of how to get clever within the spec."</h4>
+  
+  <p><em>- Idan</em> <em>Gazit</em></p>
+</blockquote>
+
+<h2 id="translations">Translations</h2>
+
+<ul>
+<li><a href="https://github.com/rwldrn/idiomatic.js/tree/master/translations/de_DE">German</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/tree/master/translations/fr_FR">French</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/tree/master/translations/es_ES">Spanish</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/tree/master/translations/pt_BR">Portuguese - Brazil</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/tree/master/translations/ko_KR">Korean</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/tree/master/translations/ja_JP">日本語</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/tree/master/translations/it_IT">Italian</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/tree/master/translations/ru_RU">Russian</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/tree/master/translations/ro_RO">Romanian</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/tree/master/translations/zh_CN">简体中文</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/tree/master/translations/ср_СР">Serbian - cyrilic alphabet</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/tree/master/translations/sr_SR">Serbian - latin alphabet</a></li>
+<li><a href="https://github.com/rwaldron/idiomatic.js/tree/master/translations/zh_TW">繁體中文</a></li>
+</ul>
+
+<h2 id="important%2C-non-idiomatic-stuff%3A">Important, Non-Idiomatic Stuff:</h2>
+
+<h3 id="code-quality-tools%2C-resources-%26-references">Code Quality Tools, Resources &amp; References</h3>
+
+<ul>
+<li><a href="http://docs.codehaus.org/display/SONAR/JavaScript+Plugin">JavaScript Plugin</a> for <a href="http://www.sonarsource.org/">Sonar</a></li>
+<li><a href="https://github.com/es-analysis/plato">Plato</a></li>
+<li><a href="http://jsperf.com/">jsPerf</a></li>
+<li><a href="http://jsfiddle.net/">jsFiddle</a></li>
+<li><a href="http://codepen.io/">Codepen</a></li>
+<li><a href="http://jsbin.com/">jsbin</a></li>
+<li><a href="http://javascriptlint.com/">JavaScript Lint (JSL)</a></li>
+<li><a href="http://jshint.com/">jshint</a></li>
+<li><a href="http://jslint.org/">jslint</a></li>
+<li><a href="http://eslint.org/">eslint</a></li>
+<li><a href="https://www.npmjs.org/package/jscs">jscs</a></li>
+<li><a href="https://www.npmjs.org/package/jscodesniffer">jscodesniffer</a></li>
+<li><a href="http://editorconfig.org/">Editorconfig</a></li>
+<li><a href="https://houndci.com/">Hound</a></li>
+</ul>
+
+<h2 id="get-smart">Get Smart</h2>
+
+<h3 id="annotated-ecmascript-5.1"><a href="http://es5.github.com/">Annotated ECMAScript 5.1</a></h3>
+
+<h3 id="ecmascript-language-specification%2C-5.1-edition"><a href="http://ecma-international.org/ecma-262/5.1/">EcmaScript Language Specification, 5.1 Edition</a></h3>
+
+<p>The following should be considered 1) incomplete, and 2) <em>REQUIRED READING</em>. I don't always agree with the style written by the authors below, but one thing is certain: They are consistent. Furthermore, these are authorities on the language.</p>
+
+<ul>
+<li><a href="http://rmurphey.com/blog/2015/03/23/a-baseline-for-front-end-developers-2015/">Baseline For Front End Developers: 2015</a></li>
+<li><a href="http://eloquentjavascript.net/">Eloquent JavaScript</a></li>
+<li><a href="http://javascriptweblog.wordpress.com/">JavaScript, JavaScript</a></li>
+<li><a href="http://rmurphey.com/">Adventures in JavaScript Development</a></li>
+<li><a href="http://perfectionkills.com/">Perfection Kills</a></li>
+<li><a href="http://www.crockford.com">Douglas Crockford's Wrrrld Wide Web</a></li>
+<li><a href="https://github.com/rmurphey/js-assessment">JS Assessment</a></li>
+</ul>
+
+<h3 id="build-%26-deployment-process">Build &amp; Deployment Process</h3>
+
+<p>Projects should always attempt to include some generic means by which source can be linted, tested and compressed in preparation for production use. For this task, <a href="https://github.com/gruntjs/grunt">grunt</a> by Ben Alman is second to none and has officially replaced the "kits/" directory of this repo.</p>
+
+<h3 id="test-facility">Test Facility</h3>
+
+<p>Projects <em>must</em> include some form of unit, reference, implementation or functional testing. Use case demos DO NOT QUALIFY as "tests". The following is a list of test frameworks, none of which are endorsed more than the other.</p>
+
+<ul>
+<li><a href="http://github.com/jquery/qunit">QUnit</a></li>
+<li><a href="https://github.com/pivotal/jasmine">Jasmine</a></li>
+<li><a href="https://github.com/cloudhead/vows">Vows</a></li>
+<li><a href="https://github.com/visionmedia/mocha">Mocha</a></li>
+<li><a href="http://hirojs.com/">Hiro</a></li>
+<li><a href="https://code.google.com/p/js-test-driver/">JsTestDriver</a></li>
+<li><a href="http://busterjs.org/">Buster.js</a></li>
+<li><a href="http://sinonjs.org/">Sinon.js</a></li>
+<li><a href="https://github.com/substack/tape">Tape</a></li>
+</ul>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+<li><a href="#whitespace">Whitespace</a></li>
+<li><a href="#spacing">Beautiful Syntax</a></li>
+<li><a href="#type">Type Checking (Courtesy jQuery Core Style Guidelines)</a></li>
+<li><a href="#cond">Conditional Evaluation</a></li>
+<li><a href="#practical">Practical Style</a></li>
+<li><a href="#naming">Naming</a></li>
+<li><a href="#misc">Misc</a></li>
+<li><a href="#native">Native &amp; Host Objects</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#language">One Language Code</a></li>
+</ul>
+
+<hr />
+
+<h2 id="preface">Preface</h2>
+
+<p>The following sections outline a <em>reasonable</em> style guide for modern JavaScript development and are not meant to be prescriptive. The most important take-away is the <strong>law of code style consistency</strong>. Whatever you choose as the style for your project should be considered law. Link to this document as a statement of your project's commitment to code style consistency, readability and maintainability.</p>
+
+<h2 id="idiomatic-style-manifesto">Idiomatic Style Manifesto</h2>
+
+<ol>
+<li><p><a name="whitespace">Whitespace</a></p>
+
+<ul>
+<li>Never mix spaces and tabs.</li>
+<li>When beginning a project, before you write any code, choose between soft indents (spaces) or real tabs, consider this <strong>law</strong>.
+
+<ul>
+<li>For readability, I always recommend setting your editor's indent size to two characters &mdash; this means two spaces or two spaces representing a real tab.</li>
+</ul></li>
+<li>If your editor supports it, always work with the "show invisibles" setting turned on. The benefits of this practice are:
+
+<ul>
+<li>Enforced consistency</li>
+<li>Eliminating end of line whitespace</li>
+<li>Eliminating blank line whitespace</li>
+<li>Commits and diffs that are easier to read</li>
+</ul></li>
+<li>Use <a href="http://editorconfig.org/">Editorconfig</a> when possible.  It supports most IDEs and handles most whitespace settings.</li>
+</ul></li>
+<li><p><a name="spacing">Beautiful Syntax</a></p>
+
+<p>A. Parens, Braces, Linebreaks</p>
+
+<pre><code class="javascript"><br />// if/else/for/while/try always have spaces, braces and span multiple lines
+// this encourages readability
+
+// 2.A.1.1
+// Examples of really cramped syntax
+
+if(condition) doSomething();
+
+while(condition) iterating++;
+
+for(var i=0;i&lt;100;i++) someIterativeFn();
+
+
+// 2.A.1.1
+// Use whitespace to promote readability
+
+if ( condition ) {
+  // statements
+}
+
+while ( condition ) {
+  // statements
+}
+
+for ( var i = 0; i &lt; 100; i++ ) {
+  // statements
+}
+
+// Even better:
+
+var i,
+  length = 100;
+
+for ( i = 0; i &lt; length; i++ ) {
+  // statements
+}
+
+// Or...
+
+var i = 0,
+  length = 100;
+
+for ( ; i &lt; length; i++ ) {
+  // statements
+}
+
+var prop;
+
+for ( prop in object ) {
+  // statements
+}
+
+
+if ( true ) {
+  // statements
+} else {
+  // statements
+}
+</code></pre>
+
+<p>B. Assignments, Declarations, Functions ( Named, Expression, Constructor )</p>
+
+<pre><code class="javascript"><br />// 2.B.1.1
+// Variables
+var foo = "bar",
+  num = 1,
+  undef;
+
+// Literal notations:
+var array = [],
+  object = {};
+
+
+// 2.B.1.2
+// Using only one `var` per scope (function) or one `var` for each variable,
+// promotes readability and keeps your declaration list free of clutter.
+// Using one `var` per variable you can take more control of your versions
+// and makes it easier to reorder the lines.
+// One `var` per scope makes it easier to detect undeclared variables
+// that may become implied globals.
+// Choose better for your project and never mix them.
+
+// Bad
+var foo = "",
+  bar = "";
+var qux;
+
+// Good
+var foo = "";
+var bar = "";
+var qux;
+
+// or..
+var foo = "",
+  bar = "",
+  qux;
+
+// or..
+var // Comment on these
+foo = "",
+bar = "",
+quux;
+
+// 2.B.1.3
+// var statements should always be in the beginning of their respective scope (function).
+
+
+// Bad
+function foo() {
+
+  // some statements here
+
+  var bar = "",
+    qux;
+}
+
+// Good
+function foo() {
+  var bar = "",
+    qux;
+
+  // all statements after the variables declarations.
+}
+
+// 2.B.1.4
+// const and let, from ECMAScript 6, should likewise be at the top of their scope (block).
+
+// Bad
+function foo() {
+  let foo,
+    bar;
+  if ( condition ) {
+    bar = "";
+    // statements
+  }
+}
+// Good
+function foo() {
+  let foo;
+  if ( condition ) {
+    let bar = "";
+    // statements
+  }
+}
+</code></pre>
+
+<pre><code class="javascript"><br />// 2.B.2.1
+// Named Function Declaration
+function foo( arg1, argN ) {
+
+}
+
+// Usage
+foo( arg1, argN );
+
+
+// 2.B.2.2
+// Named Function Declaration
+function square( number ) {
+  return number * number;
+}
+
+// Usage
+square( 10 );
+
+// Really contrived continuation passing style
+function square( number, callback ) {
+  callback( number * number );
+}
+
+square( 10, function( square ) {
+  // callback statements
+});
+
+
+// 2.B.2.3
+// Function Expression
+var square = function( number ) {
+  // Return something valuable and relevant
+  return number * number;
+};
+
+// Function Expression with Identifier
+// This preferred form has the added value of being
+// able to call itself and have an identity in stack traces:
+var factorial = function factorial( number ) {
+  if ( number &lt; 2 ) {
+    return 1;
+  }
+
+  return number * factorial( number - 1 );
+};
+
+
+// 2.B.2.4
+// Constructor Declaration
+function FooBar( options ) {
+
+  this.options = options;
+}
+
+// Usage
+var fooBar = new FooBar({ a: "alpha" });
+
+fooBar.options;
+// { a: "alpha" }
+
+</code></pre>
+
+<p>C. Exceptions, Slight Deviations</p>
+
+<pre><code class="javascript"><br />// 2.C.1.1
+// Functions with callbacks
+foo(function() {
+  // Note there is no extra space between the first paren
+  // of the executing function call and the word "function"
+});
+
+// Function accepting an array, no space
+foo([ "alpha", "beta" ]);
+
+// 2.C.1.2
+// Function accepting an object, no space
+foo({
+  a: "alpha",
+  b: "beta"
+});
+
+// Single argument string literal, no space
+foo("bar");
+
+// Expression parens, no space
+if ( !("foo" in obj) ) {
+  obj = (obj.bar || defaults).baz;
+}
+
+</code></pre>
+
+<p>D. Consistency Always Wins</p>
+
+<p>In sections 2.A-2.C, the whitespace rules are set forth as a recommendation with a simpler, higher purpose: consistency.
+It's important to note that formatting preferences, such as "inner whitespace" should be considered optional, but only one style should exist across the entire source of your project.</p>
+
+<pre><code class="javascript"><br />// 2.D.1.1
+
+if (condition) {
+  // statements
+}
+
+while (condition) {
+  // statements
+}
+
+for (var i = 0; i &lt; 100; i++) {
+  // statements
+}
+
+if (true) {
+  // statements
+} else {
+  // statements
+}
+
+</code></pre>
+
+<p>E. Quotes</p>
+
+<p>Whether you prefer single or double shouldn't matter, there is no difference in how JavaScript parses them. What <strong>ABSOLUTELY MUST</strong> be enforced is consistency. <strong>Never mix quotes in the same project. Pick one style and stick with it.</strong></p>
+
+<p>F. End of Lines and Empty Lines</p>
+
+<p>Whitespace can ruin diffs and make changesets impossible to read. Consider incorporating a pre-commit hook that removes end-of-line whitespace and blanks spaces on empty lines automatically.</p></li>
+<li><p><a name="type">Type Checking (Courtesy jQuery Core Style Guidelines)</a></p>
+
+<p>A. Actual Types</p>
+
+<p>String:</p>
+
+<pre><code>typeof variable === "string"
+</code></pre>
+
+<p>Number:</p>
+
+<pre><code>typeof variable === "number"
+</code></pre>
+
+<p>Boolean:</p>
+
+<pre><code>typeof variable === "boolean"
+</code></pre>
+
+<p>Object:</p>
+
+<pre><code>typeof variable === "object"
+</code></pre>
+
+<p>Array:</p>
+
+<pre><code>Array.isArray( arrayLikeObject )
+(wherever possible)
+</code></pre>
+
+<p>Node:</p>
+
+<pre><code>elem.nodeType === 1
+</code></pre>
+
+<p>null:</p>
+
+<pre><code>variable === null
+</code></pre>
+
+<p>null or undefined:</p>
+
+<pre><code>variable == null
+</code></pre>
+
+<p>undefined:</p>
+
+<p>Global Variables:</p>
+
+<pre><code>typeof variable === "undefined"
+</code></pre>
+
+<p>Local Variables:</p>
+
+<pre><code>variable === undefined
+</code></pre>
+
+<p>Properties:</p>
+
+<pre><code>object.prop === undefined
+object.hasOwnProperty( prop )
+"prop" in object
+</code></pre>
+
+<p>B. Coerced Types</p>
+
+<p>Consider the implications of the following...</p>
+
+<p>Given this HTML:</p>
+
+<pre><code class="html"><br />&lt;input type="text" id="foo-input" value="1"&gt;
+
+</code></pre>
+
+<pre><code class="javascript"><br />// 3.B.1.1
+
+// `foo` has been declared with the value `0` and its type is `number`
+var foo = 0;
+
+// typeof foo;
+// "number"
+...
+
+// Somewhere later in your code, you need to update `foo`
+// with a new value derived from an input element
+
+foo = document.getElementById("foo-input").value;
+
+// If you were to test `typeof foo` now, the result would be `string`
+// This means that if you had logic that tested `foo` like:
+
+if ( foo === 1 ) {
+
+  importantTask();
+
+}
+
+// `importantTask()` would never be evaluated, even though `foo` has a value of "1"
+
+
+// 3.B.1.2
+
+// You can preempt issues by using smart coercion with unary + or - operators:
+
+foo = +document.getElementById("foo-input").value;
+//    ^ unary + operator will convert its right side operand to a number
+
+// typeof foo;
+// "number"
+
+if ( foo === 1 ) {
+
+  importantTask();
+
+}
+
+// `importantTask()` will be called
+</code></pre>
+
+<p>Here are some common cases along with coercions:</p>
+
+<pre><code class="javascript"><br />// 3.B.2.1
+
+var number = 1,
+  string = "1",
+  bool = false;
+
+number;
+// 1
+
+number + "";
+// "1"
+
+string;
+// "1"
+
++string;
+// 1
+
++string++;
+// 1
+
+string;
+// 2
+
+bool;
+// false
+
++bool;
+// 0
+
+bool + "";
+// "false"
+</code></pre>
+
+<pre><code class="javascript">// 3.B.2.2
+
+var number = 1,
+  string = "1",
+  bool = true;
+
+string === number;
+// false
+
+string === number + "";
+// true
+
++string === number;
+// true
+
+bool === number;
+// false
+
++bool === number;
+// true
+
+bool === string;
+// false
+
+bool === !!string;
+// true
+</code></pre>
+
+<pre><code class="javascript">// 3.B.2.3
+
+var array = [ "a", "b", "c" ];
+
+!!~array.indexOf("a");
+// true
+
+!!~array.indexOf("b");
+// true
+
+!!~array.indexOf("c");
+// true
+
+!!~array.indexOf("d");
+// false
+
+// Note that the above should be considered "unnecessarily clever"
+// Prefer the obvious approach of comparing the returned value of
+// indexOf, like:
+
+if ( array.indexOf( "a" ) &gt;= 0 ) {
+  // ...
+}
+</code></pre>
+
+<pre><code class="javascript">// 3.B.2.4
+
+
+var num = 2.5;
+
+parseInt( num, 10 );
+
+// is the same as...
+
+~~num;
+
+num &gt;&gt; 0;
+
+num &gt;&gt;&gt; 0;
+
+// All result in 2
+
+
+// Keep in mind however, that negative numbers will be treated differently...
+
+var neg = -2.5;
+
+parseInt( neg, 10 );
+
+// is the same as...
+
+~~neg;
+
+neg &gt;&gt; 0;
+
+// All result in -2
+// However...
+
+neg &gt;&gt;&gt; 0;
+
+// Will result in 4294967294
+
+
+
+
+</code></pre></li>
+<li><p><a name="cond">Conditional Evaluation</a></p>
+
+<pre><code class="javascript"><br />// 4.1.1
+// When only evaluating that an array has length,
+// instead of this:
+if ( array.length &gt; 0 ) ...
+
+// ...evaluate truthiness, like this:
+if ( array.length ) ...
+
+
+// 4.1.2
+// When only evaluating that an array is empty,
+// instead of this:
+if ( array.length === 0 ) ...
+
+// ...evaluate truthiness, like this:
+if ( !array.length ) ...
+
+
+// 4.1.3
+// When only evaluating that a string is not empty,
+// instead of this:
+if ( string !== "" ) ...
+
+// ...evaluate truthiness, like this:
+if ( string ) ...
+
+
+// 4.1.4
+// When only evaluating that a string _is_ empty,
+// instead of this:
+if ( string === "" ) ...
+
+// ...evaluate falsy-ness, like this:
+if ( !string ) ...
+
+
+// 4.1.5
+// When only evaluating that a reference is true,
+// instead of this:
+if ( foo === true ) ...
+
+// ...evaluate like you mean it, take advantage of built in capabilities:
+if ( foo ) ...
+
+
+// 4.1.6
+// When evaluating that a reference is false,
+// instead of this:
+if ( foo === false ) ...
+
+// ...use negation to coerce a true evaluation
+if ( !foo ) ...
+
+// ...Be careful, this will also match: 0, "", null, undefined, NaN
+// If you _MUST_ test for a boolean false, then use
+if ( foo === false ) ...
+
+
+// 4.1.7
+// When only evaluating a ref that might be null or undefined, but NOT false, "" or 0,
+// instead of this:
+if ( foo === null || foo === undefined ) ...
+
+// ...take advantage of == type coercion, like this:
+if ( foo == null ) ...
+
+// Remember, using == will match a `null` to BOTH `null` and `undefined`
+// but not `false`, "" or 0
+null == undefined
+
+</code></pre>
+
+<p>ALWAYS evaluate for the best, most accurate result - the above is a guideline, not a dogma.</p>
+
+<pre><code class="javascript"><br />// 4.2.1
+// Type coercion and evaluation notes
+
+// Prefer `===` over `==` (unless the case requires loose type evaluation)
+
+// === does not coerce type, which means that:
+
+"1" === 1;
+// false
+
+// == does coerce type, which means that:
+
+"1" == 1;
+// true
+
+
+// 4.2.2
+// Booleans, Truthies &amp; Falsies
+
+// Booleans:
+true, false
+
+// Truthy:
+"foo", 1
+
+// Falsy:
+"", 0, null, undefined, NaN, void 0
+
+</code></pre></li>
+<li><p><a name="practical">Practical Style</a></p>
+
+<pre><code class="javascript"><br />// 5.1.1
+// A Practical Module
+
+(function( global ) {
+  var Module = (function() {
+
+    var data = "secret";
+
+    return {
+      // This is some boolean property
+      bool: true,
+      // Some string value
+      string: "a string",
+      // An array property
+      array: [ 1, 2, 3, 4 ],
+      // An object property
+      object: {
+        lang: "en-Us"
+      },
+      getData: function() {
+        // get the current value of `data`
+        return data;
+      },
+      setData: function( value ) {
+        // set the value of `data` and return it
+        return ( data = value );
+      }
+    };
+  })();
+
+  // Other things might happen here
+
+  // expose our module to the global object
+  global.Module = Module;
+
+})( this );
+
+</code></pre>
+
+<pre><code class="javascript"><br />// 5.2.1
+// A Practical Constructor
+
+(function( global ) {
+
+  function Ctor( foo ) {
+
+    this.foo = foo;
+
+    return this;
+  }
+
+  Ctor.prototype.getFoo = function() {
+    return this.foo;
+  };
+
+  Ctor.prototype.setFoo = function( val ) {
+    return ( this.foo = val );
+  };
+
+
+  // To call constructor's without `new`, you might do this:
+  var ctor = function( foo ) {
+    return new Ctor( foo );
+  };
+
+
+  // expose our constructor to the global object
+  global.ctor = ctor;
+
+})( this );
+
+</code></pre></li>
+<li><p><a name="naming">Naming</a></p>
+
+<p>A. You are not a human code compiler/compressor, so don't try to be one.</p>
+
+<p>The following code is an example of egregious naming:</p>
+
+<pre><code class="javascript"><br />// 6.A.1.1
+// Example of code with poor names
+
+function q(s) {
+  return document.querySelectorAll(s);
+}
+var i,a=[],els=q("#foo");
+for(i=0;i&lt;els.length;i++){a.push(els[i]);}
+</code></pre>
+
+<p>Without a doubt, you've written code like this - hopefully that ends today.</p>
+
+<p>Here's the same piece of logic, but with kinder, more thoughtful naming (and a readable structure):</p>
+
+<pre><code class="javascript"><br />// 6.A.2.1
+// Example of code with improved names
+
+function query( selector ) {
+  return document.querySelectorAll( selector );
+}
+
+var idx = 0,
+  elements = [],
+  matches = query("#foo"),
+  length = matches.length;
+
+for ( ; idx &lt; length; idx++ ) {
+  elements.push( matches[ idx ] );
+}
+
+</code></pre>
+
+<p>A few additional naming pointers:</p>
+
+<pre><code class="javascript"><br />// 6.A.3.1
+// Naming strings
+
+`dog` is a string
+
+
+// 6.A.3.2
+// Naming arrays
+
+`dogs` is an array of `dog` strings
+
+
+// 6.A.3.3
+// Naming functions, objects, instances, etc
+
+camelCase; function and var declarations
+
+
+// 6.A.3.4
+// Naming constructors, prototypes, etc.
+
+PascalCase; constructor function
+
+
+// 6.A.3.5
+// Naming regular expressions
+
+rDesc = //;
+
+
+// 6.A.3.6
+// From the Google Closure Library Style Guide
+
+functionNamesLikeThis;
+variableNamesLikeThis;
+ConstructorNamesLikeThis;
+EnumNamesLikeThis;
+methodNamesLikeThis;
+SYMBOLIC_CONSTANTS_LIKE_THIS;
+
+</code></pre>
+
+<p>B. Faces of <code>this</code></p>
+
+<p>Beyond the generally well known use cases of <code>call</code> and <code>apply</code>, always prefer <code>.bind( this )</code> or a functional equivalent, for creating <code>BoundFunction</code> definitions for later invocation. Only resort to aliasing when no preferable option is available.</p>
+
+<pre><code class="javascript"><br />// 6.B.1
+function Device( opts ) {
+
+  this.value = null;
+
+  // open an async stream,
+  // this will be called continuously
+  stream.read( opts.path, function( data ) {
+
+    // Update this instance's current value
+    // with the most recent value from the
+    // data stream
+    this.value = data;
+
+  }.bind(this) );
+
+  // Throttle the frequency of events emitted from
+  // this Device instance
+  setInterval(function() {
+
+    // Emit a throttled event
+    this.emit("event");
+
+  }.bind(this), opts.freq || 100 );
+}
+
+// Just pretend we've inherited EventEmitter ;)
+
+</code></pre>
+
+<p>When unavailable, functional equivalents to <code>.bind</code> exist in many modern JavaScript libraries.</p>
+
+<pre><code class="javascript">// 6.B.2
+
+// eg. lodash/underscore, _.bind()
+function Device( opts ) {
+
+  this.value = null;
+
+  stream.read( opts.path, _.bind(function( data ) {
+
+    this.value = data;
+
+  }, this) );
+
+  setInterval(_.bind(function() {
+
+    this.emit("event");
+
+  }, this), opts.freq || 100 );
+}
+
+// eg. jQuery.proxy
+function Device( opts ) {
+
+  this.value = null;
+
+  stream.read( opts.path, jQuery.proxy(function( data ) {
+
+    this.value = data;
+
+  }, this) );
+
+  setInterval( jQuery.proxy(function() {
+
+    this.emit("event");
+
+  }, this), opts.freq || 100 );
+}
+
+// eg. dojo.hitch
+function Device( opts ) {
+
+  this.value = null;
+
+  stream.read( opts.path, dojo.hitch( this, function( data ) {
+
+    this.value = data;
+
+  }) );
+
+  setInterval( dojo.hitch( this, function() {
+
+    this.emit("event");
+
+  }), opts.freq || 100 );
+}
+
+</code></pre>
+
+<p>As a last resort, create an alias to <code>this</code> using <code>self</code> as an Identifier. This is extremely bug prone and should be avoided whenever possible.</p>
+
+<pre><code class="javascript"><br />// 6.B.3
+
+function Device( opts ) {
+  var self = this;
+
+  this.value = null;
+
+  stream.read( opts.path, function( data ) {
+
+    self.value = data;
+
+  });
+
+  setInterval(function() {
+
+    self.emit("event");
+
+  }, opts.freq || 100 );
+}
+
+</code></pre>
+
+<p>C. Use <code>thisArg</code></p>
+
+<p>Several prototype methods of ES 5.1 built-ins come with a special <code>thisArg</code> signature, which should be used whenever possible</p>
+
+<pre><code class="javascript"><br />// 6.C.1
+
+var obj;
+
+obj = { f: "foo", b: "bar", q: "qux" };
+
+Object.keys( obj ).forEach(function( key ) {
+
+  // |this| now refers to `obj`
+
+  console.log( this[ key ] );
+
+}, obj ); // &lt;-- the last arg is `thisArg`
+
+// Prints...
+
+// "foo"
+// "bar"
+// "qux"
+
+</code></pre>
+
+<p><code>thisArg</code> can be used with <code>Array.prototype.every</code>, <code>Array.prototype.forEach</code>, <code>Array.prototype.some</code>, <code>Array.prototype.map</code>, <code>Array.prototype.filter</code></p></li>
+<li><p><a name="misc">Misc</a></p>
+
+<p>This section will serve to illustrate ideas and concepts that should not be considered dogma, but instead exists to encourage questioning practices in an attempt to find better ways to do common JavaScript programming tasks.</p>
+
+<p>A. Using <code>switch</code> should be avoided, modern method tracing will blacklist functions with switch statements</p>
+
+<p>There seems to be drastic improvements to the execution of <code>switch</code> statements in latest releases of Firefox and Chrome.
+http://jsperf.com/switch-vs-object-literal-vs-module</p>
+
+<p>Notable improvements can be witnessed here as well:
+https://github.com/rwldrn/idiomatic.js/issues/13</p>
+
+<pre><code class="javascript"><br />// 7.A.1.1
+// An example switch statement
+
+switch( foo ) {
+  case "alpha":
+    alpha();
+    break;
+  case "beta":
+    beta();
+    break;
+  default:
+    // something to default to
+    break;
+}
+
+// 7.A.1.2
+// A alternate approach that supports composability and reusability is to
+// use an object to store "cases" and a function to delegate:
+
+var cases, delegator;
+
+// Example returns for illustration only.
+cases = {
+  alpha: function() {
+    // statements
+    // a return
+    return [ "Alpha", arguments.length ];
+  },
+  beta: function() {
+    // statements
+    // a return
+    return [ "Beta", arguments.length ];
+  },
+  _default: function() {
+    // statements
+    // a return
+    return [ "Default", arguments.length ];
+  }
+};
+
+delegator = function() {
+  var args, key, delegate;
+
+  // Transform arguments list into an array
+  args = [].slice.call( arguments );
+
+  // shift the case key from the arguments
+  key = args.shift();
+
+  // Assign the default case handler
+  delegate = cases._default;
+
+  // Derive the method to delegate operation to
+  if ( cases.hasOwnProperty( key ) ) {
+    delegate = cases[ key ];
+  }
+
+  // The scope arg could be set to something specific,
+  // in this case, |null| will suffice
+  return delegate.apply( null, args );
+};
+
+// 7.A.1.3
+// Put the API in 7.A.1.2 to work:
+
+delegator( "alpha", 1, 2, 3, 4, 5 );
+// [ "Alpha", 5 ]
+
+// Of course, the `case` key argument could easily be based
+// on some other arbitrary condition.
+
+var caseKey, someUserInput;
+
+// Possibly some kind of form input?
+someUserInput = 9;
+
+if ( someUserInput &gt; 10 ) {
+  caseKey = "alpha";
+} else {
+  caseKey = "beta";
+}
+
+// or...
+
+caseKey = someUserInput &gt; 10 ? "alpha" : "beta";
+
+// And then...
+
+delegator( caseKey, someUserInput );
+// [ "Beta", 1 ]
+
+// And of course...
+
+delegator();
+// [ "Default", 0 ]
+
+
+</code></pre>
+
+<p>B. Early returns promote code readability with negligible performance difference</p>
+
+<pre><code class="javascript"><br />// 7.B.1.1
+// Bad:
+function returnLate( foo ) {
+  var ret;
+
+  if ( foo ) {
+    ret = "foo";
+  } else {
+    ret = "quux";
+  }
+  return ret;
+}
+
+// Good:
+
+function returnEarly( foo ) {
+
+  if ( foo ) {
+    return "foo";
+  }
+  return "quux";
+}
+
+</code></pre></li>
+<li><p><a name="native">Native &amp; Host Objects</a></p>
+
+<p>The basic principle here is:</p>
+
+<h3 id="don%27t-do-stupid-shit-and-everything-will-be-ok.">Don't do stupid shit and everything will be ok.</h3>
+
+<p>To reinforce this concept, please watch the following presentation:</p>
+
+<h4 id="%E2%80%9Ceverything-is-permitted%3A-extending-built-ins%E2%80%9D-by-andrew-dupont-jsconf2011%2C-portland%2C-oregon">“Everything is Permitted: Extending Built-ins” by Andrew Dupont (JSConf2011, Portland, Oregon)</h4>
+
+<p>http://www.everytalk.tv/talks/441-JSConf-Everything-is-Permitted-Extending-Built-ins</p></li>
+<li><p><a name="comments">Comments</a></p>
+
+<h4 id="single-line-above-the-code-that-is-subject">Single line above the code that is subject</h4>
+
+<h4 id="multiline-is-good">Multiline is good</h4>
+
+<h4 id="end-of-line-comments-are-prohibited%21">End of line comments are prohibited!</h4>
+
+<h4 id="jsdoc-style-is-good%2C-but-requires-a-significant-time-investment">JSDoc style is good, but requires a significant time investment</h4></li>
+<li><p><a name="language">One Language Code</a></p>
+
+<p>Programs should be written in one language, whatever that language may be, as dictated by the maintainer or maintainers.</p></li>
+</ol>
+
+<h2 id="appendix">Appendix</h2>
+
+<h3 id="comma-first.">Comma First.</h3>
+
+<p>Any project that cites this document as its base style guide will not accept comma first code formatting, unless explicitly specified otherwise by that project's author.</p>
+
+<hr />
+
+<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Principles of Writing Consistent, Idiomatic JavaScript</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/rwldrn/idiomatic.js" property="cc:attributionName" rel="cc:attributionURL">Rick Waldron and Contributors</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/rwldrn/idiomatic.js" rel="dct:source">github.com/rwldrn/idiomatic.js</a>.</p>
+                </div>
+                <div class="span4 sidebar">
+                    <div class="well sidebar-nav"  style="position:fixed;">
+                        <h4>Coding Standards <small>To Get You Started</small></h4>
+                        <ul class="nav">
+                            <li><a href="/conventions">Conventions</a></li>
+                            <li><a href="/php-guide">PHP</a></li>
+                            <li><a href="/javascript-guide">Javascript</a></li>
+                            <li><a href="/ruby-guide">Ruby</a></li>
+                            <li><a href="/markup-guide">Markup</a></li>
+                            <li><a href="/testing">Testing</a></li>
+                            <li><a href="/working-agreement">Team</a></li>
+                            <li><a href="/compliance">Compliance</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                        </ul>
+                        <h4>Continuing Education <small>on YouTube</small></h4>
+                        <ul class="nav">
+                            <li><a href="https://www.youtube.com/playlist?list=PLAVpGyGR5CAzCm5VFFw0mOW-gjznsb04o">Computer Programming</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLAVpGyGR5CAyI82XAU6n-2V8Bjbv2GMtl">DevOps</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLAVpGyGR5CAzJMocNAEiYAHM6ROmuOdAF">TDD is Not Dead, it Just Smells Funny</a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=PLAVpGyGR5CAwTi9uhs0lXwx-XttF8W7_i">Business Philosophy</a></li>
+                            <li><a href="https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q/videos">Fun Fun Function!</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="container">
+            &copy; 2016 Groid.io
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/components/jquery/jquery.min.js"><\/script>')</script>
+        <script src="/components/bootstrap/js/bootstrap.min.js"></script>
+                
+                <script src="/components/highlightjs/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+                    </body>
+</html>
