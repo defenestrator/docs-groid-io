@@ -1,5 +1,5 @@
 ---
-title: Syntax Highlighting
+title: Code Syntax Highlighting
 categories:
     - features
 
