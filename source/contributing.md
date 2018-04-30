@@ -8,7 +8,7 @@ This site is built using [Sculpin](http://sculpin.io) via Composer.
 
 It is tested using [Behat](http://behat.org/en/latest/).
 
-To install it and start contributing `git clone https://github.com/defenestrator/docs-groid-io.git` 
+To install it and start contributing `git clone https://github.com/defenestrator/docs-elbow-io.git` 
 then run `composer install`
 
 Run `sculpin generate` to generate output, and serve the site from `docs` to check what it builds

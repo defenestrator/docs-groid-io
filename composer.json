@@ -1,13 +1,13 @@
 {
-  "name": "defenestrator/docs-groid-io",
-  "description": "Documentation for groid.io",
+  "name": "defenestrator/docs-elbow-farm",
+  "description": "Developer Documentation for elbow.farm",
   "type": "project",
   "license": "MIT",
   "authors": [
     {
       "name": "Jeremy Anderson",
-      "email": "jeremy@groid.io",
-      "homepage": "http://docs.groid.io"
+      "email": "jeremyblc@gmail.com",
+      "homepage": "https://docs.elbow.farm"
     }
   ],
   "minimum-stability": "dev",

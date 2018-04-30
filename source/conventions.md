@@ -10,7 +10,7 @@ This guide exists to provide a marginally sane set of defaults for building soft
 
 ### The Basics
 
-- We use Git, there will be no push-to-master deployments on the groid-io repository.
+- We use Git, there will be no push-to-master deployments on the elbow-io repository.
   - Administrators may push to Master for this documentation site, but all others must submit a Pull Request.
 - Contributions MUST use UTF-8 Character Encoding for source code files.
 - Contributions MUST use Unix Newlines
