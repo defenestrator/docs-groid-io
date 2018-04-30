@@ -3,14 +3,14 @@
     <title><![CDATA[Coding Standards]]></title>
     <link href="/blog/categories/features.xml" rel="self"/>
     <link href="/"/>
-    <updated>2018-04-30T14:46:32+00:00</updated>
+    <updated>2018-04-30T15:24:46+00:00</updated>
     <id>/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
             <entry>
             <title type="html"><![CDATA[Code Syntax Highlighting]]></title>
-            <link href="/blog/2013/02/04/highlight"/>
+            <link href="/blog/2013/02/04/highlight/"/>
             <updated>2013-02-04T00:00:00+00:00</updated>
-            <id>/blog/2013/02/04/highlight</id>
+            <id>/blog/2013/02/04/highlight/</id>
             <content type="html"><![CDATA[<p>You're all programmers, right? Yeah. So you want some highlighting with your static site generation?
 Here you go!</p>
 
